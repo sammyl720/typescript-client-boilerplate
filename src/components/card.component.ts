@@ -2,6 +2,7 @@ import { observable } from "../core/observable";
 import { IElement, IElementFactory, ISubscriber } from "../interfaces/index";
 
 export class Card extends observable implements IElement {
+  readonly name = 'Card';
   private _element: HTMLElement;
 
   constructor(
@@ -39,8 +40,10 @@ export class Card extends observable implements IElement {
   }
 
   set title(value: string) {
-    this.title = value;
-    this.update();
+    if (this._title != value) {
+      this._title = value;
+      this.update();
+    }
   }
 
   get title() {
@@ -48,8 +51,10 @@ export class Card extends observable implements IElement {
   }
 
   set body(value: string) {
-    this._body = value;
-    this.update();
+    if (this._body != value) {
+      this._body = value;
+      this.update();
+    }
   }
 
   get body() {
