@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import './vars';
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +9,6 @@
 body, html {
   width: 100%;
   height: 100%;
+  font-family: $primary-font;
+  color: $dark-cornflower-blue;
 }
